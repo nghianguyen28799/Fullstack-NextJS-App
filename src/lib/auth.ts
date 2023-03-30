@@ -52,7 +52,7 @@ export const authOptions: NextAuthOptions = {
                 }
             })
 
-            console.log(dbUser);
+
 
 
             if (!dbUser) {

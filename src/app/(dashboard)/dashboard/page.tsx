@@ -1,5 +1,5 @@
-import RequestApiKey from "@/components/ApiDashboard";
 import ApiDashboard from "@/components/ApiDashboard";
+import RequestApiKey from "@/components/RequestApiKey";
 import { authOptions } from "@/lib/auth";
 import { db } from "@/lib/db";
 import { type Metadata } from "next";
@@ -14,6 +14,7 @@ export const metaData: Metadata = {
 
 const DashBoard = async () => {
   const userSession = await getServerSession(authOptions);
+
   if (!userSession) notFound();
   const apiKey = await db.apiKey.findFirst({
     where: {
